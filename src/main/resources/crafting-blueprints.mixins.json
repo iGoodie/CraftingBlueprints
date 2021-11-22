@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.programmer.igoodie.craftingblueprints.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "craftingblueprints.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
