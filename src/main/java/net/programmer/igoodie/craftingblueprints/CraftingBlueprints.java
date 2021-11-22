@@ -3,6 +3,7 @@ package net.programmer.igoodie.craftingblueprints;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.programmer.igoodie.craftingblueprints.init.ModBlocks;
 import net.programmer.igoodie.craftingblueprints.init.ModItems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,6 +25,8 @@ public class CraftingBlueprints {
     }
 
     private void registerDeferredRegistries() {
+        ModBlocks.REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModBlocks.TE_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModItems.REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 

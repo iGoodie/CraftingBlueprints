@@ -1,4 +1,5 @@
 {
   "itemGroup.crafting_blueprints.blueprints": "Blueprints",
-  "item.crafting_blueprints.crafting_blueprint": "Crafting Blueprint"
+  "item.crafting_blueprints.crafting_blueprint": "Crafting Blueprint",
+  "block.crafting_blueprints.manufacturing_bench": "Manufacturing Bench"
 }

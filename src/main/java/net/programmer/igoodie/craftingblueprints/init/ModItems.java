@@ -1,5 +1,6 @@
 package net.programmer.igoodie.craftingblueprints.init;
 
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,5 +15,8 @@ public class ModItems {
 
     public static RegistryObject<ItemCraftingBlueprint> CRAFTING_BLUEPRINT
             = REGISTRY.register("crafting_blueprint", () -> new ItemCraftingBlueprint(new Item.Properties().group(GroupBlueprints.INSTANCE).maxStackSize(1).setNoRepair()));
+
+    public static RegistryObject<BlockItem> MANUFACTURING_BENCH
+            = REGISTRY.register("manufacturing_bench", () -> new BlockItem(ModBlocks.MANUFACTURING_BENCH.get(), new Item.Properties().group(GroupBlueprints.INSTANCE).maxStackSize(1).setNoRepair()));
 
 }

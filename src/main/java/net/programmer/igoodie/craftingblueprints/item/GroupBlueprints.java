@@ -4,6 +4,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.programmer.igoodie.craftingblueprints.CraftingBlueprints;
+import net.programmer.igoodie.craftingblueprints.init.ModIcons;
 import net.programmer.igoodie.craftingblueprints.init.ModItems;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,7 +26,7 @@ public class GroupBlueprints extends ItemGroup {
     @Override
     public @NotNull ItemStack createIcon() {
         ItemStack itemStack = new ItemStack(ModItems.CRAFTING_BLUEPRINT.get());
-        return ItemCraftingBlueprint.setIcon(itemStack, CraftingBlueprints.id("item/blueprint/icon/pickaxe"));
+        return ItemCraftingBlueprint.setIcon(itemStack, ModIcons.PICKAXE);
     }
 
     @Override
@@ -40,7 +41,7 @@ public class GroupBlueprints extends ItemGroup {
 
     @Override
     public int getLabelColor() {
-        return 0xFF_BDCDF2;
+        return 0xFF_C9D5F0;
     }
 
 }

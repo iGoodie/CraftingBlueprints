@@ -3,6 +3,8 @@ package net.programmer.igoodie.craftingblueprints.init;
 import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.programmer.igoodie.craftingblueprints.block.render.RendererManufacturingBench;
 import net.programmer.igoodie.craftingblueprints.item.color.ColorBlueprint;
 import net.programmer.igoodie.craftingblueprints.item.model.ModelCraftingBlueprint;
 import net.programmer.igoodie.craftingblueprints.item.model.ReplacementItemModel;
@@ -20,7 +22,7 @@ public class ModModels {
     public static class ItemProperties {}
 
     public static class BakedModels {
-        public static void register(Map<ResourceLocation, IBakedModel> modelRegistry) {
+        public static void replaceModels(Map<ResourceLocation, IBakedModel> modelRegistry) {
             replaceBakedModel(modelRegistry,
                     new ModelResourceLocation(ModItems.CRAFTING_BLUEPRINT.getId(), "inventory"),
                     ModelCraftingBlueprint::new);
@@ -38,6 +40,12 @@ public class ModModels {
             }
 
             modelRegistry.put(id, new ReplacementItemModel(existingModel, modelGenerator));
+        }
+    }
+
+    public static class TileEntityRenderers {
+        public static void register() {
+            ClientRegistry.bindTileEntityRenderer(ModBlocks.TE_MANUFACTURING_BENCH.get(), RendererManufacturingBench::new);
         }
     }
 
