@@ -5,7 +5,7 @@ license = "All rights reserved"
 [[mods]] #mandatory
 modId = "crafting_blueprints" #mandatory
 version = "${file.jarVersion}" #mandatory
-displayName = "Crafting Blueprints" #mandatory
+displayName = "iGoodie's Crafting Blueprints" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 #updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI

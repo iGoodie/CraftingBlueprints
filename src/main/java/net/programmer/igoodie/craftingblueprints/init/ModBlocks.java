@@ -22,6 +22,6 @@ public class ModBlocks {
     /* Tile Entities --------------------------------- */
 
     public static RegistryObject<TileEntityType<TileEntityManufacturingBench>> TE_MANUFACTURING_BENCH
-            = TE_REGISTRY.register("manufacturing_bench", () -> TileEntityType.Builder.create(TileEntityManufacturingBench::new).build(null));
+            = TE_REGISTRY.register("te_manufacturing_bench", () -> TileEntityType.Builder.create(TileEntityManufacturingBench::new, MANUFACTURING_BENCH.get()).build(null));
 
 }
