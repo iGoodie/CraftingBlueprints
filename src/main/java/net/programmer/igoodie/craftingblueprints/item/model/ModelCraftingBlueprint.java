@@ -36,18 +36,22 @@ public class ModelCraftingBlueprint extends DynamicItemModel {
 
         List<BakedQuad> generatedQuads = new LinkedList<>();
 
-        for (int i = 0; i < bakedQuads.size(); i++) {
-            BakedQuad bakedQuad = bakedQuads.get(i);
+        for (BakedQuad bakedQuad : bakedQuads) {
+            if (bakedQuad.getTintIndex() == 1) {
+                TextureAtlasSprite sprite = iconSprite != null
+                        ? iconSprite : bakedQuad.getSprite();
 
-            TextureAtlasSprite sprite = i == 0 && iconSprite != null
-                    ? iconSprite : bakedQuad.getSprite();
+                generatedQuads.add(new BakedQuad(
+                        updateTexture(bakedQuad.getVertexData(), sprite),
+                        bakedQuad.getTintIndex(),
+                        bakedQuad.getFace(),
+                        sprite,
+                        bakedQuad.applyDiffuseLighting()
+                ));
 
-            generatedQuads.add(new BakedQuad(
-                    updateTexture(bakedQuad.getVertexData(), sprite),
-                    i == 0 ? 1 : -1,
-                    bakedQuad.getFace(),
-                    sprite,
-                    bakedQuad.applyDiffuseLighting()));
+            } else {
+                generatedQuads.add(bakedQuad);
+            }
         }
 
         return generatedQuads;
@@ -55,6 +59,12 @@ public class ModelCraftingBlueprint extends DynamicItemModel {
 
     private int[] updateTexture(int[] vertexData, TextureAtlasSprite texture) {
         int[] updatedData = Arrays.copyOf(vertexData, 32);
+
+        // Consider rotation (?)
+        // 0, 0
+        // 0, 16
+        // 16, 16
+        // 16, 0
 
         updatedData[4] = Float.floatToRawIntBits(texture.getInterpolatedU(0));
         updatedData[5] = Float.floatToRawIntBits(texture.getInterpolatedV(0));
