@@ -34,6 +34,7 @@ public class ItemCraftingBlueprint extends Item {
 
     @Override
     public void fillItemGroup(@NotNull ItemGroup group, @NotNull NonNullList<ItemStack> items) {
+        if (!this.isInGroup(group)) return;
         for (ResourceLocation textureLocation : ModIcons.REGISTRY.values()) {
             items.add(setIcon(new ItemStack(this), textureLocation));
         }

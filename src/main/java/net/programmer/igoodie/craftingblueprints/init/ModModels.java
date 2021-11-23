@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.programmer.igoodie.craftingblueprints.block.render.RendererManufacturingBench;
-import net.programmer.igoodie.craftingblueprints.item.color.ColorBlueprint;
+import net.programmer.igoodie.craftingblueprints.item.color.ColorBlueprintIcon;
 import net.programmer.igoodie.craftingblueprints.item.model.ModelCraftingBlueprint;
 import net.programmer.igoodie.craftingblueprints.item.model.ReplacementItemModel;
 
@@ -13,13 +13,17 @@ import java.util.Map;
 
 public class ModModels {
 
-    public static class ItemColors {
-        public static void register(net.minecraft.client.renderer.color.ItemColors colors) {
-            colors.register(ColorBlueprint.INSTANCE, ColorBlueprint.INSTANCE.appliedItems());
+    public static class TileEntityRenderers {
+        public static void register() {
+            ClientRegistry.bindTileEntityRenderer(ModBlocks.TE_MANUFACTURING_BENCH.get(), RendererManufacturingBench::new);
         }
     }
 
-    public static class ItemProperties {}
+    public static class ItemColors {
+        public static void register(net.minecraft.client.renderer.color.ItemColors colors) {
+            colors.register(ColorBlueprintIcon.INSTANCE, ColorBlueprintIcon.INSTANCE.appliedItems());
+        }
+    }
 
     public static class BakedModels {
         public static void replaceModels(Map<ResourceLocation, IBakedModel> modelRegistry) {
@@ -40,12 +44,6 @@ public class ModModels {
             }
 
             modelRegistry.put(id, new ReplacementItemModel(existingModel, modelGenerator));
-        }
-    }
-
-    public static class TileEntityRenderers {
-        public static void register() {
-            ClientRegistry.bindTileEntityRenderer(ModBlocks.TE_MANUFACTURING_BENCH.get(), RendererManufacturingBench::new);
         }
     }
 

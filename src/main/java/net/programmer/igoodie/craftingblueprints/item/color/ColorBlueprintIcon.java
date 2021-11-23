@@ -8,11 +8,11 @@ import net.programmer.igoodie.craftingblueprints.init.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
-public class ColorBlueprint extends ModColor {
+public class ColorBlueprintIcon extends ModColor {
 
-    public static final ColorBlueprint INSTANCE = new ColorBlueprint();
+    public static final ColorBlueprintIcon INSTANCE = new ColorBlueprintIcon();
 
-    private ColorBlueprint() {}
+    private ColorBlueprintIcon() {}
 
     @Override
     public IItemProvider[] appliedItems() {
