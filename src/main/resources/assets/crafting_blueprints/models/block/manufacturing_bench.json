@@ -2,7 +2,7 @@
   "credit": "Made with Blockbench",
   "texture_size": [64, 64],
   "textures": {
-    "particle": "crafting_blueprints:block/manufacturing_bench",
+    "particle": "crafting_blueprints:block/manufacturing_bench_particle",
     "table": "crafting_blueprints:block/manufacturing_bench"
   },
   "elements": [
@@ -11,9 +11,9 @@
       "from": [0, 0, 0],
       "to": [16, 16, 16],
       "faces": {
-        "north": {"uv": [4, 0, 8, 4], "texture": "#table"},
+        "north": {"uv": [0, 4, 4, 8], "texture": "#table"},
         "east": {"uv": [4, 0, 8, 4], "texture": "#table"},
-        "south": {"uv": [0, 4, 4, 8], "texture": "#table"},
+        "south": {"uv": [4, 0, 8, 4], "texture": "#table"},
         "west": {"uv": [0, 4, 4, 8], "texture": "#table"},
         "up": {"uv": [0, 0, 4, 4], "texture": "#table"},
         "down": {"uv": [0, 0, 4, 4], "texture": "#table"}
